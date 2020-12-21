@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Application Login</title>
+<link rel="stylesheet" type="text/css" href="static/view.css" media="all">
+<!--<script type="text/javascript" src="static/view.js"></script>-->
+<script>
+function myFunction() 
+{
+	var xhr = new XMLHttpRequest();
+	var url = "/";
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+			
+			console.log("Inside if")
+			
+		}
+	};element_1
+	var data = JSON.stringify({"username": document.getElementById("element_1").value , "password": document.getElementById("element_2").value});
+	xhr.send(data);
+}
+</script>
+
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="static/top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Application Login</a></h1>
+		
+		<form id="myform" class="appnitro" method="get" >
+		
+		<div class="form_description">
+			<h2>Application Login</h2>
+			<p>Please login here</p>
+		</div>						
+		
+		<ul >
+		<li id="li_1" >
+			<label class="description">Username </label>
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" autocomplete="on" value=""/> 
+			</div> 
+		</li>		
+		<li id="li_2" >
+			<label class="description">Password </label>
+			<div>
+				<input id="element_2" name="element_2" class="element text large" type="password" maxlength="255" autocomplete="on" value=""/> 
+			</div> 
+		</li>
+			
+		<li class="buttons">
+			<button id="submit" class="input" type="button" onclick="myFunction()">Submit</button>
+		</li>
+		</ul>
+		</form>	
+		
+	</div>
+	<img id="bottom" src="static/bottom.png" alt="">
+	</body>
+</html>
