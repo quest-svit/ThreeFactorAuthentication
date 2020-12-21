@@ -21,7 +21,7 @@ It has 5 phases:
 4) Persist
 5) Report
 
-It uses OpenCV, TensorFlow and SQLLite Database
+This prototype is written in Python and uses OpenCV, TensorFlow machine learning libraries and SQLLite Database for persistance and report generation
 
 Benefits:
 * Protects applications from unauthorized usage
